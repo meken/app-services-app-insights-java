@@ -44,6 +44,7 @@
       "name": "[variables('webAppName')]",
       "apiVersion": "2018-11-01",
       "location": "[variables('location')]",
+      "kind": "app,linux",
       "identity": {
         "type": "SystemAssigned"
       },
@@ -88,9 +89,7 @@
       "properties": {
         "name": "[variables('webAppName')]",
         "siteConfig": {
-          "javaVersion": "1.8",
-          "javaContainer": "JAVA",
-          "javaContainerVersion": "8"
+	  "linuxFxVersion": "JAVA|8"
         },
         "serverFarmId": "[variables('hostingPlanId')]"
       },
@@ -106,6 +105,7 @@
       "location": "[variables('location')]",
       "properties": {
         "name": "[variables('hostingPlanName')]",
+	"reserved": true,
         "httpsOnly": true
       },
       "sku": {
